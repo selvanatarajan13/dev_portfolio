@@ -1,0 +1,1 @@
+export const NAV_LINKS = ["Journey", "Skills", "Experience", "Projects", "Contact"];
