@@ -6,10 +6,11 @@ type AppSectionProps = {
     id: string;
     bg?: string;
     children: ReactNode;
+    className?: string;
 }
-export default function AppSection({ id, bg, children }: AppSectionProps) {
+export default function AppSection({ id, bg, children, className }: AppSectionProps) {
     return (
-        <section id={id} className={cn("py-32 bg-white", bg && `${bg}`)}>
+        <section id={id} className={cn("bg-white", bg && `${bg}`, className)}>
             <AppContainer>
                 {children}
             </AppContainer>
