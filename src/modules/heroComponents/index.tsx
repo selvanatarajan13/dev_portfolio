@@ -48,7 +48,7 @@ export default function Hero() {
               w-full
               items-center
               gap-12
-              py-24
+              py-15
               lg:grid-cols-[1fr_auto]
               xl:gap-20
             "
