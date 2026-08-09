@@ -18,7 +18,7 @@ export const Logo = ({
             href={href}
             className="flex items-center gap-2.5 group"
         >
-            <div className="w-8 h-8 rounded-xl bg-[#4F46E5] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+            <div className="w-8 h-8 rounded-full bg-[#4F46E5] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <span className="text-white font-bold text-[13px]">
                     {profile}
                 </span>
