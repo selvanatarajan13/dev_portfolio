@@ -1,3 +1,4 @@
+import { ContactComponent } from "@/modules/ContactComponents/ContactComponent";
 import { ExperienceComponent } from "@/modules/ExperienceComponents";
 import Hero from "@/modules/heroComponents";
 import { JourneyComponent } from "@/modules/journeyComponents";
@@ -10,6 +11,7 @@ export default function Home() {
       <JourneyComponent />
       <SkillsComponents />
       <ExperienceComponent />
+      <ContactComponent />
     </>
   );
 }
