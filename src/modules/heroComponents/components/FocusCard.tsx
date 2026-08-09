@@ -1,13 +1,4 @@
 "use client";
-
-import Chip from "@mui/material/Chip";
-import Divider from "@mui/material/Divider";
-
-import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
-import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
-import CloudRoundedIcon from "@mui/icons-material/CloudRounded";
-import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
-import ArrowOutwardRoundedIcon from "@mui/icons-material/ArrowOutwardRounded";
 import { cn } from "@/lib/utils";
 
 const FOCUSES = [
@@ -29,7 +20,7 @@ export default function FocusCard() {
         border-black/8
         shadow-[0_20px_60px_-12px_rgba(0,0,0,0.15),0_4px_16px_-4px_rgba(0,0,0,0.08)]
         p-7
-        w-[272px]
+        w-68
       "
     >
      <div className="absolute inset-x-0 top-0 h-1 rounded-t-[28px] bg-gradient-to-r from-[#4F46E5] via-violet-500 to-indigo-400" />
