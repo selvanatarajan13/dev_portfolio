@@ -30,7 +30,7 @@ export const JourneyComponent = () => {
 
     return (
         <AppSection id="journey" bg="bg-[#FAFAFA]">
-            <div className="grid lg:grid-cols-[360px_1fr] gap-16 xl:gap-24">
+            <div className="grid lg:grid-cols-[360px_1fr] gap-16 xl:gap-24 px-8">
                 <JourneySideBar data={data.TYPE_CONFIG} />
                 <JourneyTimeLine data={data} />
             </div>

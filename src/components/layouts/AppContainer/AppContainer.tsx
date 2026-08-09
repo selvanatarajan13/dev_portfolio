@@ -27,7 +27,7 @@ export default function AppContainer({
   return (
     <div
       className={cn(
-        "w-full max-w-7xl mx-auto px-6 py-15 lg:px-8",
+        "w-full max-w-7xl mx-auto px-auto py-15 lg:px-8",
         className
       )}
     >

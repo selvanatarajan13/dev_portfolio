@@ -33,6 +33,7 @@ export default function Hero() {
         overflow-hidden
         bg-white
         text-zinc-900
+        px-8
       "
     >
       {/* Background */}

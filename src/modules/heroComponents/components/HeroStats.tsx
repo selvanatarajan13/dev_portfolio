@@ -8,25 +8,33 @@ export default function HeroStats({
       className="
         flex
         flex-wrap
-        gap-8
+        justify-center
+        items-center
+        gap-6
         border-t
         border-black/[0.06]
-        pt-8
+        pt-6
 
+        sm:justify-start
         sm:gap-10
+        sm:pt-8
       "
     >
       {stats.map((stat) => (
         <div
           key={stat.label}
           className="
-            min-w-[100px]
+            min-w-[80px]
+            text-center
+
+            sm:min-w-[100px]
+            sm:text-left
           "
         >
           {/* Value */}
           <div
             className="
-              text-[28px]
+              text-[24px]
               font-black
               leading-none
               tracking-tight
@@ -44,7 +52,7 @@ export default function HeroStats({
           <p
             className="
               mt-1.5
-              text-[12px]
+              text-[11px]
               font-medium
               leading-5
               text-zinc-400
