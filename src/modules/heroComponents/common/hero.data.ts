@@ -8,7 +8,7 @@ import {
 
 
 export const HERO_CONTENT: HeroContent = {
-  status: "Available · Software Engineer · Backend Specialist",
+  status: "Available · Software Developer",
 
   title: {
     line1: "Building Modern",
@@ -18,7 +18,7 @@ export const HERO_CONTENT: HeroContent = {
   },
 
   description:
-    "Software Engineer focused on backend development, enterprise application modernization and scalable web systems.",
+    "Software Developer focused on FullStack Development, enterprise application modernization and scalable web systems.",
 };
 
 
@@ -35,7 +35,7 @@ export const HERO_STATS: HeroStat[] = [
   },
   {
     id: 3,
-    value: "3+",
+    value: "1",
     label: "Projects Built",
   },
 ];
