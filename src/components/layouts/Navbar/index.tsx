@@ -31,7 +31,6 @@ export const Navbar = () => {
                 <div className="max-w-[1280px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
                     <Logo 
                         label="Selvanatarajan"
-                        profile="S"
                     />
                     <div className="hidden md:flex items-center gap-1">
                         <NavLinks />

@@ -26,7 +26,7 @@ export const HERO_STATS: HeroStat[] = [
   {
     id: 1,
     value: "1+",
-    label: "Year in Industry",
+    label: "Year of Experience",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const HERO_STATS: HeroStat[] = [
   {
     id: 3,
     value: "1",
-    label: "Projects Built",
+    label: "Project Delivered",
   },
 ];
 

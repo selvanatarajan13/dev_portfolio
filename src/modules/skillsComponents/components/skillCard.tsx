@@ -1,9 +1,8 @@
 
 
-import { Box, Typography } from '@mui/material';
+import { Box, Divider, Typography } from '@mui/material';
 
 import { BaseCard } from '@/components/common/card';
-import { Tag } from '@/components/common/tag';
 import { Icon1 } from '@/components/common/icon';
 
 import { SkillCardProps } from './skillCard.types';
@@ -16,40 +15,34 @@ export const SkillCard = ({
     skills = [],
     iconBg,
     iconColor,
-    border,
-    glow,
     animated = true,
     inView = true,
 }: SkillCardProps) => {
 
-    console.log('iconBg: ', iconBg)
-
     return (
         <BaseCard
             variant="outlined"
-            className={`${border} ${glow}`}
+            className="group h-full border-[#EAEAEA] transition-all duration-300 hover:-translate-y-1 hover:border-[#DCD9FF] hover:shadow-[0_16px_36px_-20px_rgba(81,69,255,0.35)]"
             sx={{
                 height: '100%',
                 width: '100%',
-                p: 4,
+                p: { xs: 3, sm: 3.5, lg: 4 },
                 display: 'flex',
                 flexDirection: 'column',
 
 
                 opacity: inView ? 1 : 0,
 
-                transform: inView
-                    ? 'translateY(0)'
-                    : 'translateY(1px)',
+                transform: inView ? undefined : 'translateY(16px)',
 
                 transition: animated
-                    ? `
-                        opacity 0.6s ${index ? index * 100 : 0}ms,
-                        transform 0.6s ${index ? index * 100 : 0}ms,
-                        box-shadow 0.3s,
-                        border-color 0.3s
-                    `
+                    ? `opacity 0.5s ${index ? index * 80 : 0}ms, transform 0.5s ${index ? index * 80 : 0}ms, box-shadow 0.3s, border-color 0.3s`
                     : 'none',
+                '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 16px 36px -20px rgba(81, 69, 255, 0.35)',
+                    borderColor: '#DCD9FF',
+                },
             }}
         >
             {/* Card Number */}
@@ -59,9 +52,9 @@ export const SkillCard = ({
                         position: 'absolute',
                         top: 24,
                         right: 24,
-                        fontSize: 12,
-                        fontWeight: 700,
-                        color: '#D4D4D8',
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: '#A1A1AA',
                         fontFamily: 'monospace',
                     }}
                 >
@@ -70,9 +63,7 @@ export const SkillCard = ({
             )}
 
             {/* Icon */}
-            <Icon1
-                backgroundColor={iconBg}
-            >
+            <Icon1 backgroundColor={iconBg} size={48}>
                 <Icon
                     size={22}
                     className={iconColor}
@@ -83,10 +74,13 @@ export const SkillCard = ({
             <Typography
                 variant="h6"
                 sx={{
-                    mt: 3,
-                    mb: 1.5,
-                    fontWeight: 700,
-                    color: '#09090B',
+                    mt: 2.5,
+                    mb: 1,
+                    pr: 3,
+                    fontWeight: 600,
+                    color: '#18181B',
+                    fontSize: { xs: 20, sm: 21, lg: 22 },
+                    lineHeight: 1.25,
                 }}
             >
                 {title}
@@ -96,27 +90,35 @@ export const SkillCard = ({
             <Typography
                 variant="body2"
                 sx={{
-                    mb: 3,
+                    mb: 2.5,
                     color: '#71717A',
-                    lineHeight: 1.8,
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    minHeight: { sm: 50 },
                 }}
             >
                 {desc}
             </Typography>
 
             {/* Skills */}
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: 1,
-                }}
-            >
-                {skills.map((skill) => (
-                    <Tag
+            <Divider sx={{ mb: 2.5, borderColor: '#EEEEF2' }} />
+
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', columnGap: 2, rowGap: 1.5 }}>
+                {skills.map((skill, skillIndex) => (
+                    <Typography
                         key={skill}
-                        label={skill}
-                    />
+                        component="span"
+                        sx={{
+                            minWidth: 0,
+                            color: '#3F3F46',
+                            fontSize: skillIndex < 2 ? { xs: 17, sm: 18, lg: 19 } : { xs: 15, lg: 16 },
+                            fontWeight: 500,
+                            lineHeight: 1.4,
+                            overflowWrap: 'anywhere',
+                        }}
+                    >
+                        {skill}
+                    </Typography>
                 ))}
             </Box>
         </BaseCard>

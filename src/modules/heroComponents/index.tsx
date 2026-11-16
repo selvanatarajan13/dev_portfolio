@@ -22,6 +22,7 @@ import {
 
 import AppContainer from "@/components/layouts/AppContainer";
 import HeroActions from "./components/HeroActions";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -40,39 +41,48 @@ export default function Hero() {
       <HeroBackground />
 
       {/* Main Content */}
-      <div className="relative flex min-h-screen items-center">
+      <div className="relative flex min-h-screen items-center py-20">
         <AppContainer>
           <div
             className="
-              grid
+              flex
               w-full
+              flex-col
               items-center
-              gap-12
-              py-15
-              lg:grid-cols-[1fr_auto]
-              xl:gap-20
+              gap-8
+              py-8
+              text-center
             "
           >
-            {/* Left Content */}
-            <div style={heroAnimations.fadeUp}>
+            <div className="flex w-full flex-col items-center" style={heroAnimations.fadeUp}>
+              <div className="mb-5 h-36 w-36 overflow-hidden rounded-3xl border border-zinc-200 shadow-sm">
+                <Image
+                  src="/selva.png"
+                  alt="Selva at his development workspace"
+                  width={144}
+                  height={144}
+                  priority
+                  className="h-full w-full object-cover object-[center_32%]"
+                />
+              </div>
+
               <HeroStatus status={HERO_CONTENT.status} />
 
-              <div className="mt-10">
+              <div className="mt-7 w-full">
                 <HeroHeading content={HERO_CONTENT} />
               </div>
 
-              <div className="mt-10">
+              <div className="mt-2">
                 <HeroActions actions={HERO_ACTIONS} />
               </div>
 
-              <div className="mt-16">
+              <div className="mt-8 w-full max-w-2xl">
                 <HeroStats stats={HERO_STATS} />
               </div>
             </div>
 
-            {/* Right Content */}
             <div
-              className="lg:flex"
+              className="flex w-full justify-center"
               style={heroAnimations.fadeUpDelayed}
             >
               <HeroRightPanel />

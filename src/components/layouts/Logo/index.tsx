@@ -1,16 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 type LogoProps = {
     href?: string;
-    profile?: string;
     label?: string;
 };
 
 export const Logo = ({
     href = '#',
-    profile,
     label
 }: LogoProps) => {
     return (
@@ -18,10 +17,14 @@ export const Logo = ({
             href={href}
             className="flex items-center gap-2.5 group"
         >
-            <div className="w-8 h-8 rounded-full bg-[#4F46E5] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-                <span className="text-white font-bold text-[13px]">
-                    {profile}
-                </span>
+            <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-[#5145FF]/15 transition-transform duration-200 group-hover:scale-105">
+                <Image
+                    src="/selva.png"
+                    alt=""
+                    fill
+                    sizes="36px"
+                    className="object-cover object-[center_32%]"
+                />
             </div>
 
             <span className="font-semibold text-[15px] tracking-tight text-zinc-900">

@@ -9,7 +9,7 @@ export default function HeroActions({
   actions,
 }: HeroActionsProps) {
   return (
-    <div className="mt-12 flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center justify-center gap-4">
       {actions.map((action) => (
         <Link key={action.id} href={action.href}>
           {action.variant === "primary" ? (

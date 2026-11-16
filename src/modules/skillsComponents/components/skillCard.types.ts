@@ -6,11 +6,8 @@ export type SkillCardProps = {
     desc: string;
     icon: LucideIcon;
     skills?: string[];
-    accent: string;
     iconBg: string;
     iconColor: string;
-    border: string;
-    glow: string;
     animated?: boolean;
     inView?: boolean;
 };

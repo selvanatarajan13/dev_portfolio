@@ -15,7 +15,6 @@ export default function HeroStats({
         border-black/[0.06]
         pt-6
 
-        sm:justify-start
         sm:gap-10
         sm:pt-8
       "
@@ -28,7 +27,6 @@ export default function HeroStats({
             text-center
 
             sm:min-w-[100px]
-            sm:text-left
           "
         >
           {/* Value */}

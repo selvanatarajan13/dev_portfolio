@@ -1,10 +1,7 @@
 "use client";
 
-import { Terminal } from "lucide-react";
-
 import { heroAnimations } from "@/modules/heroComponents/common/hero.animation";
 
-import FocusCard from "@/modules/heroComponents/components/FocusCard";
 import TerminalMock from "@/modules/heroComponents/components/TerminalMock";
 
 export default function HeroRightPanel() {
@@ -15,61 +12,31 @@ export default function HeroRightPanel() {
         w-full
         flex-col
         items-center
-        gap-5
+        gap-6
 
         lg:w-auto
-        lg:items-end
+        lg:items-center
       "
     >
-      {/* Open To Work */}
-      <div
-        className="
-          self-center
-          flex
-          items-center
-          gap-2
-          rounded-2xl
-          border
-          border-black/[0.08]
-          bg-white
-          px-4
-          py-2.5
-          text-[13px]
-          font-semibold
-          text-zinc-700
-          shadow-lg
-
-          lg:self-start
-        "
-        style={heroAnimations.floatingChip}
-      >
-        <Terminal
-          size={14}
-          className="text-[#4F46E5]"
-        />
-
-        Open to work
+      <div className="w-full max-w-[720px]">
+        <h2 className="mb-4 flex items-center justify-center gap-4 text-sm font-semibold text-zinc-500">
+          <span className="h-px w-8 bg-[#5145FF]" />
+          TECH STACK
+          <span className="h-px w-8 bg-[#5145FF]" />
+        </h2>
+        <div className="flex flex-wrap justify-center gap-2.5">
+          {["Java 17", "Spring Boot", "Next.js", "SQL", "TypeScript", "React.js"].map((technology) => (
+            <span
+              key={technology}
+              className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm"
+            >
+              {technology}
+            </span>
+          ))}
+        </div>
       </div>
 
-      {/* Current Focus */}
-      <div
-        className="
-          w-full
-          max-w-[272px]
-        "
-        style={heroAnimations.floatingCard}
-      >
-        <FocusCard />
-      </div>
-
-      {/* Terminal */}
-      <div
-        className="
-          w-full
-          max-w-[340px]
-        "
-        style={heroAnimations.floatingTerminal}
-      >
+      <div className="w-full max-w-[390px]" style={heroAnimations.floatingTerminal}>
         <TerminalMock />
       </div>
     </div>
