@@ -13,31 +13,31 @@ export const JourneyComponent = () => {
                 year: '2020 - 2024',
                 type: 'education',
                 title: 'Bachelor of Engineering (ECE)',
-                desc: 'Graduated from VV College of Engineering with a degree in Electronics and Communication Engineering, developing a strong foundation in analytical thinking, problem-solving, and technical concepts.',
+                desc: 'Earned a Bachelor of Engineering in Electronics and Communication, building a strong foundation in analytical thinking and problem solving.',
             },
             {
                 year: '2024 - 2025',
-                type: 'skill_Learning',
+                type: 'skill_learning',
                 title: 'Focused on Java & Backend Development',
-                desc: 'Strengthened programming skills in Core Java, Spring Boot, REST API development, JPA/Hibernate, SQL, and Oracle databases while building practical software development knowledge.',
+                desc: 'Built a foundation in Java, Spring Boot, REST APIs, JPA, SQL, and Oracle through focused study and hands-on practice.',
             },
             {
                 year: '2025',
                 type: 'career',
-                title: 'Started Software Development Career at Sathi System Pvt. Ltd.',
-                desc: 'Started my professional journey as a Software Developer, contributing to enterprise applications, implementing features, debugging issues, and working with real-world business requirements.',
+                title: 'Software Developer at Sathi System',
+                desc: 'Joined as a Software Developer, delivering features, debugging issues, and supporting enterprise applications.',
             },
             {
                 year: '2025 - 2026',
                 type: 'career',
                 title: 'Enterprise Application Modernization',
-                desc: 'Contributed to modernizing legacy Struts and JSP applications by migrating frontend modules to Next.js and developing backend APIs using Java and Spring Boot. Worked with React, TypeScript, SQL, and enterprise database systems.',
+                desc: 'Modernized Struts and JSP modules with Next.js and built Java and Spring Boot APIs using React, TypeScript, and SQL.',
             },
             {
                 year: "2026",
                 type: "enterprise_skill",
                 title: "Production Debugging & Database Engineering",
-                desc: "Gained practical experience investigating production issues, analyzing application logs, debugging backend workflows, troubleshooting complex SQL queries, and working with Oracle databases.",
+                desc: "Investigated production issues, traced backend workflows, analyzed logs, and resolved complex SQL problems in Oracle.",
             }
         ];
 
@@ -52,37 +52,30 @@ export const JourneyComponent = () => {
             }
         > = {
             education: {
-                dot: "bg-violet-500 ring-violet-200",
-                pill: "bg-violet-50 border-violet-100",
-                pillText: "text-violet-600",
+                dot: "bg-[#A855F7] ring-[#E9D5FF]",
+                pill: "bg-[#FAF5FF] border-[#E9D5FF]",
+                pillText: "text-[#9333EA]",
                 label: "Education",
             },
 
-            skill_Learning: {
-                dot: "bg-indigo-400 ring-indigo-100",
-                pill: "bg-indigo-50 border-indigo-100",
-                pillText: "text-indigo-600",
+            skill_learning: {
+                dot: "bg-[#818CF8] ring-[#DDE3FF]",
+                pill: "bg-[#F5F6FF] border-[#DDE3FF]",
+                pillText: "text-[#6366D9]",
                 label: "Skill Learning",
             },
 
-            project : {
-                dot: "bg-sky-500 ring-sky-100",
-                pill: "bg-sky-50 border-sky-100",
-                pillText: "text-sky-600",
-                label: "Project",
-            },
-
             career: {
-                dot: "bg-[#4F46E5] ring-[#4F46E5]/20",
-                pill: "bg-[#EEF2FF] border-indigo-100",
-                pillText: "text-[#4F46E5]",
+                dot: "bg-[#4F46FF] ring-[#DCD9FF]",
+                pill: "bg-[#F5F4FF] border-[#DCD9FF]",
+                pillText: "text-[#5145FF]",
                 label: "Career",
             },
             enterprise_skill: {
-                dot: "bg-indigo-400 ring-indigo-100",
-                pill: "bg-indigo-50 border-indigo-100",
-                pillText: "text-indigo-600",
-                label: "Enterprise Skill Gaining",
+                dot: "bg-[#5145FF] ring-[#DCD9FF]",
+                pill: "bg-[#F5F4FF] border-[#DCD9FF]",
+                pillText: "text-[#5145FF]",
+                label: "Engineering",
             },
         };
 
@@ -105,8 +98,9 @@ export const JourneyComponent = () => {
                     lg:px-8
                     grid
                     lg:grid-cols-[360px_1fr]
-                    gap-16
-                    xl:gap-24
+                    gap-12
+                    lg:gap-16
+                    xl:gap-20
                 "
             >
                 {/* Journey Header / Sidebar */}

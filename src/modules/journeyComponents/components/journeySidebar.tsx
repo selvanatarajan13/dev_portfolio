@@ -18,7 +18,7 @@ export const JourneySideBar = ({ data }: Props) => {
             <SectionTitle 
                 label="My Journey"
                 title="From Graduate to Engineer"
-                description="Key milestones across education, projects, and career that shaped me as a backend engineer."
+                description="A few milestones that shaped my path into software and backend engineering."
             />
             <PathsTag data={data} />
         </div>
@@ -27,11 +27,11 @@ export const JourneySideBar = ({ data }: Props) => {
 
 const PathsTag = ({ data }: Props) => {
     return (
-        <div className="mt-10 flex flex-col gap-2.5">
+        <div className="mt-8 flex flex-col gap-3">
             {data && Object.entries(data).map(([key, c]) => (
                 <div key={key} className="flex items-center gap-3">
-                  <div className={cn("w-2.5 h-2.5 rounded-full ring-4", c.dot)} />
-                  <span className="text-[13px] text-zinc-500 font-medium">{c.label}</span>
+                  <div className={cn("w-2 h-2 rounded-full ring-2 ring-offset-2 ring-offset-[#FAFAFA]", c.dot)} />
+                  <span className="text-sm text-zinc-500">{c.label}</span>
                 </div>
             ))}
         </div>

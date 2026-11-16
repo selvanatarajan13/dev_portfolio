@@ -28,39 +28,34 @@ export const JourneyTimeLine = ({ data }: JourneyTimeLineProps) => {
 
     const { ref, inView } = useInView({ threshold: 0.05 });
 
-    console.log('data?.TIMELINE?.length: ', data?.TIMELINE?.length);
-    console.log('data?.TYPE_CONFIG?.length: ', data?.TYPE_CONFIG?.length);
-    console.log('data: ', data);
-
-    
-
     return (
-        <div ref={ref} className="pt-1">
+        <div ref={ref} className="pt-1" aria-label="Career and education timeline">
             {data.TIMELINE.map((item, i) => {
-              const c = data.TYPE_CONFIG[item.type];
+              const c = data.TYPE_CONFIG[item.type] ?? data.TYPE_CONFIG.career;
+              const isActive = i === data.TIMELINE.length - 1;
               return (
                 <div
                   key={i}
-                  className="flex gap-5 md:gap-8"
+                  className="group flex gap-4 sm:gap-6 md:gap-8"
                   style={{
                     opacity: inView ? 1 : 0,
                     transform: inView ? "translateX(0)" : "translateX(-16px)",
-                    transition: `opacity 0.55s ${i * 90}ms, transform 0.55s ${i * 90}ms`,
+                    transition: `opacity 0.45s ${i * 70}ms, transform 0.45s ${i * 70}ms`,
                   }}
                 >
                     <div className="flex flex-col items-center">
-                        <div className={cn("w-4 h-4 rounded-full border-[3px] border-white shadow-md ring-[3px] mt-1.5 shrink-0", c.dot)} />
+                        <div className={cn("relative mt-1.5 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-white ring-2 transition-transform duration-200 group-hover:scale-110", c.dot, isActive && "ring-4 ring-offset-2 ring-offset-[#FAFAFA]")} />
                         {i < data.TIMELINE.length - 1 && (
-                            <div className="w-px flex-1 mt-2.5 bg-gradient-to-b from-zinc-200 to-transparent min-h-[36px]" />
+                            <div className="w-px flex-1 mt-2.5 bg-zinc-200 min-h-[36px]" />
                         )}
                     </div>
-                    <div className="pb-10 flex-1 min-w-0">
-                        <div className="flex flex-wrap items-center gap-2 mb-2">
-                            <span className="font-mono text-[12px] font-bold text-zinc-400 bg-white border border-zinc-200 px-2 py-0.5 rounded-lg">{item.year}</span>
-                            <span className={cn("text-[11px] font-bold px-2.5 py-0.5 rounded-full border", c.pill, c.pillText)}>{c.label}</span>
+                    <div className="min-w-0 flex-1 pb-8 sm:pb-9">
+                        <div className="mb-2.5 flex flex-wrap items-center gap-2">
+                            <span className="rounded-md border border-zinc-200 bg-white px-2 py-0.5 font-mono text-[11px] font-medium text-zinc-500">{item.year}</span>
+                            <span className={cn("rounded-full border px-2 py-0.5 text-[10px] font-semibold", c.pill, c.pillText)}>{c.label}</span>
                         </div>
-                        <h3 className="text-[17px] font-bold text-zinc-900 mb-1.5">{item.title}</h3>
-                        <p className="text-[14px] text-zinc-500 leading-relaxed">{item.desc}</p>
+                        <h3 className="mb-1.5 text-base font-semibold text-zinc-900 transition-colors group-hover:text-[#5145FF] sm:text-[17px]">{item.title}</h3>
+                        <p className="max-w-2xl text-sm leading-6 text-zinc-500">{item.desc}</p>
                     </div>
                 </div>
               );
